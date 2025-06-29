@@ -23,7 +23,7 @@ Artisan::command('ollama', function () {
         }
         $messages[] = ['role' => 'user', 'content' => $question];
 
-        $response = Ollama::model('llama3.1')
+        $response = Ollama::model('tinyllama:latest')
             ->options(['temperature' => 0])
             ->stream(true)
             ->chat($messages);
